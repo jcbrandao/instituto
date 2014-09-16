@@ -1,0 +1,277 @@
+<%= form_for @aluno, :html => { :class => "form-horizontal aluno" } do |f| %>
+
+  <% if @aluno.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title">Ocorreu <%= pluralize(@aluno.errors.count, "erro(s)") %> ao tentar salvar os dados deste aluno:</h3>
+      
+      </div>
+          <div class="panel-body">
+            <ul>
+               <% @aluno.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+               <% end %>
+            </ul>
+          </div>
+      </div>
+  <% end %>
+<%
+#  
+# começar o mudar o codigo para nav tabs
+#
+%>
+
+<ul class="nav nav-tabs" id="tabs">
+    <li class="active">
+        <a href="#dados_pessoais">Dados Pessoais</a>
+    </li>
+    <li class="">
+        <a href="#dados_familiares">Dados Familiares</a>
+    </li>
+    <li class="">
+        <a href="#dados_escolares">Dados Escolares</a>
+    </li>
+    <li class="">
+        <a href="#saude">Histórico Saúde</a>
+    </li>
+    </li>
+    <li class="">
+        <a href="#saude">Benefícios</a>
+    </li>
+    </li>
+    <li class="">
+        <a href="#gestação">Gestação/Nascimento</a>
+    </li>
+    </li>
+    <li class="">
+        <a href="#vida">1º Ano de Vida</a>
+    </li>
+</ul>  
+
+<%
+#
+#começar a colocar os dados dentro das nav
+#
+%>
+<div class="tab-content" id="my-tab-content">
+
+    <div id="dados_pessoais" class="tab-pane active">
+
+      <div class="row">
+
+        <div class="col-xs-6">
+  
+              <div class="control-group">
+                <%= f.label :nome, :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :nome, :class => 'form-control', :placeholder => "Entre como nome do Aluno" %>
+                </div>
+                <%= error_span(@aluno[:nome]) %>
+              </div>
+        </div>
+
+        <div class="col-md-4">
+
+               <div class="control-group">
+                <%= f.label :endereco, :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :endereco, :class => 'form-control', :placeholder => "Entre com o endereço do Aluno" %>
+                </div>
+                <%= error_span(@aluno[:endereco]) %>
+              </div>
+        </div>
+
+        <div class="col-md-2">
+
+              <div class="control-group">
+                <%= f.label :numero, :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :numero, :class => 'form-control', :placeholder => "Número da residência "%>
+                </div>
+                <%= error_span(@aluno[:numero]) %>
+              </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-xs-6">
+  
+              <div class="control-group">
+                <%= f.label :bairro, :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :bairro, :class => 'form-control', :placeholder => "Bairro da residência" %>
+                </div>
+                <%= error_span(@aluno[:bairro]) %>
+              </div>
+        </div>
+
+        <div class="col-md-4">
+
+              <div class="control-group">
+                <%= f.label :cidade, :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :cidade, :class => 'form-control', :placeholder => "Cidade da residência" %>
+                </div>
+                <%= error_span(@aluno[:cidade]) %>
+              </div>
+        </div>
+
+        <div class="col-md-2">
+
+              <div class="control-group">
+                <%= f.label :estado, :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :estado, :class => 'form-control', :placeholder => "Estado da residência"  %>
+                </div>
+                <%= error_span(@aluno[:estado]) %>
+              </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-xs-6">
+  
+              <div class="control-group">
+                <%= f.label :email, :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :email, :class => 'form-control', :placeholder => "E-Mail do Aluno"  %>
+                </div>
+                <%= error_span(@aluno[:email]) %>
+              </div>
+        </div>
+
+        <div class="col-md-2">
+
+              <div class="control-group">
+                <%= f.label :telefone, :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :telefone, :class => 'form-control', :placeholder => "Telefone do Aluno"%>
+                </div>
+                <%= error_span(@aluno[:telefone]) %>
+              </div>
+        </div>
+
+        <div class="col-md-2">
+
+              <div class="control-group">
+                <%= f.label :celular, :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :celular, :class => 'form-control', :placeholder => "Celular do Aluno"  %>
+                </div>
+                <%= error_span(@aluno[:celular]) %>
+              </div>
+        </div>
+
+        <div class="col-md-2">
+
+              <div class="control-group">
+                <%= f.label :ativo, :class => 'control-label' , :placeholder => "Aluno esta ativo ?" %>
+                <div class="controls">
+                  <%= f.check_box:ativo %>
+                </div>
+                <%= error_span(@aluno[:ativo]) %>
+              </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-xs-3">
+  
+              <div class="control-group">
+                <%= f.label :rg, :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :rg, :class => 'form-control', :placeholder => "R.G. do Aluno"  %>
+                </div>
+                <%= error_span(@aluno[:rg]) %>
+              </div>
+        </div>
+
+        <div class="col-md-3">
+
+              <div class="control-group">
+                <%= f.label :cpf, :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :cpf, :class => 'form-control', :placeholder => "C.P.F. do Aluno"  %>
+                </div>
+                <%= error_span(@aluno[:cpf]) %>
+              </div>
+        </div>
+
+        <div class="col-md-3">
+
+              <div class="control-group">
+                <%= f.label :data_nascimento, :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :data_nascimento, :class => 'form-control', :placeholder => "Data Nascimento do Aluno"  %>
+                </div>
+                <%= error_span(@aluno[:data_nascimento]) %>
+              </div>
+        </div>
+
+        <div class="col-md-3">
+
+              <div class="control-group">
+                <%= f.label :data_cadastro, :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :data_cadastro, :class => 'form-control', :placeholder => "Data Cadastro do Aluno"  %>
+                </div>
+                <%= error_span(@aluno[:data_cadastro]) %>
+              </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div id="dados_familiares" class="tab-pane ">
+        Coluna2
+    </div>
+    
+    <div id="dados_escolares" class="tab-pane">
+            coluna 3
+    </div>
+
+</div>
+
+
+
+
+
+
+<%
+#
+# a partir daqui esta original
+# 
+%>
+
+<br></br>
+<div class="panel panel-default">
+  <div class="panel-body">
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            alunos_path, :class => 'btn btn-default' %>
+</div>
+
+
+<% end %>
+
+<%
+#
+# colocar o script das tabs nav
+#
+%>
+
+<script type="text/javascript">
+    $(function() {
+        $('#tabs a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+    })
+
+</script>

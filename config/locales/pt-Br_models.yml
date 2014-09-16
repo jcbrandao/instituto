@@ -1,0 +1,7 @@
+"pt-BR":
+    activerecord:
+       models:
+         alunos: "alunos"
+       attributes:
+        id: "identificador"
+        created_at: "Criado em"
