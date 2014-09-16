@@ -1,5 +1,6 @@
 # Load the Rails application.
 require File.expand_path('../application', __FILE__)
+require 'will_paginate'
 #require 'brazilian_rails' 
 #Time::DATE_FORMATS[:data_br] = "%d/%m/%Y"
 #Time::DATE_FORMATS[:dia_semana] = "%A"

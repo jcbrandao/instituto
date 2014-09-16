@@ -5,6 +5,9 @@ gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'brazilian-rails'
 gem 'justinfrench-formtastic'
+gem 'will_paginate-bootstrap'
+gem 'jquery-inputmask-rails'
+gem "mask_validator"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
