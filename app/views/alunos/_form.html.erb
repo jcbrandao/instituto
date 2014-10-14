@@ -1,4 +1,4 @@
-<%= form_for @aluno, :html => { :class => "form-horizontal aluno" } do |f| %>
+<%= simple_form_for @aluno, :html => { :class => "form-horizontal aluno" } do |f| %>
 
   <% if @aluno.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -56,13 +56,15 @@
 <div class="tab-content" id="my-tab-content">
 
     <div id="dados_pessoais" class="tab-pane active">
+    
+    <br>
+    <div class="well well-sm">Dados do Aluno</div>
 
-      <div class="row">
+    <div class="row">
 
         <div class="col-xs-6">
-  
               <div class="control-group">
-                <%= f.label :nome, :class => 'control-label' %>
+                <%= f.label :nome, "Nome",  :class => 'control-label' %>
                 <div class="controls">
                   <%= f.text_field :nome, :class => 'form-control', :placeholder => "Entre como nome do Aluno" %>
                 </div>
@@ -73,7 +75,7 @@
         <div class="col-md-4">
 
                <div class="control-group">
-                <%= f.label :endereco, :class => 'control-label' %>
+                <%= f.label :endereco, "Endereço",:class => 'control-label' %>
                 <div class="controls">
                   <%= f.text_field :endereco, :class => 'form-control', :placeholder => "Entre com o endereço do Aluno" %>
                 </div>
@@ -84,7 +86,7 @@
         <div class="col-md-2">
 
               <div class="control-group">
-                <%= f.label :numero, :class => 'control-label' %>
+                <%= f.label :numero, "Número",:class => 'control-label' %>
                 <div class="controls">
                   <%= f.text_field :numero, :class => 'form-control', :placeholder => "Número da residência "%>
                 </div>
@@ -99,7 +101,7 @@
         <div class="col-xs-6">
   
               <div class="control-group">
-                <%= f.label :bairro, :class => 'control-label' %>
+                <%= f.label :bairro,"Bairro", :class => 'control-label' %>
                 <div class="controls">
                   <%= f.text_field :bairro, :class => 'form-control', :placeholder => "Bairro da residência" %>
                 </div>
@@ -110,7 +112,7 @@
         <div class="col-md-4">
 
               <div class="control-group">
-                <%= f.label :cidade, :class => 'control-label' %>
+                <%= f.label :cidade,"Cidade", :class => 'control-label' %>
                 <div class="controls">
                   <%= f.text_field :cidade, :class => 'form-control', :placeholder => "Cidade da residência" %>
                 </div>
@@ -121,9 +123,8 @@
         <div class="col-md-2">
 
               <div class="control-group">
-                <%= f.label :estado, :class => 'control-label' %>
                 <div class="controls">
-                  <%= f.text_field :estado, :class => 'form-control', :placeholder => "Estado da residência"  %>
+                <%= f.input :estado, priority: [ "São Paulo" ], collection: [ "São Paulo", "Minas Gerais", "Paraná", "Santa Catarina"] %>
                 </div>
                 <%= error_span(@aluno[:estado]) %>
               </div>
@@ -136,7 +137,7 @@
         <div class="col-xs-6">
   
               <div class="control-group">
-                <%= f.label :email, :class => 'control-label' %>
+                <%= f.label :email,"E-mail", :class => 'control-label' %>
                 <div class="controls">
                   <%= f.text_field :email, :class => 'form-control', :placeholder => "E-Mail do Aluno"  %>
                 </div>
@@ -147,7 +148,7 @@
         <div class="col-md-2">
 
               <div class="control-group">
-                <%= f.label :telefone, :class => 'control-label' %>
+                <%= f.label :telefone,"Telefone", :class => 'control-label' %>
                 <div class="controls">
                   <%= f.text_field :telefone, :class => 'form-control', :placeholder => "Telefone do Aluno"%>
                 </div>
@@ -158,7 +159,7 @@
         <div class="col-md-2">
 
               <div class="control-group">
-                <%= f.label :celular, :class => 'control-label' %>
+                <%= f.label :celular,"Celular",:class => 'control-label' %>
                 <div class="controls">
                   <%= f.text_field :celular, :class => 'form-control', :placeholder => "Celular do Aluno"  %>
                 </div>
@@ -169,7 +170,7 @@
         <div class="col-md-2">
 
               <div class="control-group">
-                <%= f.label :ativo, :class => 'control-label' , :placeholder => "Aluno esta ativo ?" %>
+                <%= f.label :ativo, "Está Ativo",:class => 'control-label' , :placeholder => "Aluno esta ativo ?" %>
                 <div class="controls">
                   <%= f.check_box:ativo %>
                 </div>
@@ -183,7 +184,7 @@
         <div class="col-xs-3">
   
               <div class="control-group">
-                <%= f.label :rg, :class => 'control-label' %>
+                <%= f.label :rg, "R.G.",:class => 'control-label' %>
                 <div class="controls">
                   <%= f.text_field :rg, :class => 'form-control', :placeholder => "R.G. do Aluno"  %>
                 </div>
@@ -194,7 +195,7 @@
         <div class="col-md-3">
 
               <div class="control-group">
-                <%= f.label :cpf, :class => 'control-label' %>
+                <%= f.label :cpf, "C.P.F.",:class => 'control-label' %>
                 <div class="controls">
                   <%= f.text_field :cpf, :class => 'form-control', :placeholder => "C.P.F. do Aluno"  %>
                 </div>
@@ -205,7 +206,7 @@
         <div class="col-md-3">
 
               <div class="control-group">
-                <%= f.label :data_nascimento, :class => 'control-label' %>
+                <%= f.label :data_nascimento,"Data de Nascimento", :class => 'control-label' %>
                 <div class="controls">
                   <%= f.text_field :data_nascimento, :class => 'form-control', :placeholder => "Data Nascimento do Aluno"  %>
                 </div>
@@ -216,7 +217,7 @@
         <div class="col-md-3">
 
               <div class="control-group">
-                <%= f.label :data_cadastro, :class => 'control-label' %>
+                <%= f.label :data_cadastro, "Data de Cadastro",:class => 'control-label' %>
                 <div class="controls">
                   <%= f.text_field :data_cadastro, :class => 'form-control', :placeholder => "Data Cadastro do Aluno"  %>
                 </div>
@@ -227,16 +228,406 @@
 
 
     </div>
-
+   
     <div id="dados_familiares" class="tab-pane ">
-        Coluna2
+   
+    <br>
+    <div class="well well-sm">Dados do Pai</div>
+   
+  
+      <div class="row">
+       <div class="col-xs-6">
+
+                <div class="control-group">
+                  <%= f.label :nome_pai,"Nome", :class => 'control-label' %>
+                  <div class="controls">
+                    <%= f.text_field :nome_pai, :class => 'form-control', :placeholder => "Entre como nome do Pai" %>
+                  </div>
+                  <%= error_span(@aluno[:nome_pai]) %>
+                </div>
+          </div>
+
+       <div class="col-md-4">
+
+               <div class="control-group">
+                <%= f.label :endereco_pai,"Endereço", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :endereco_pai, :class => 'form-control', :placeholder => "Entre com o endereço do Pai" %>
+                </div>
+                <%= error_span(@aluno[:endereco_pai]) %>
+              </div>
+        </div>
+
+        <div class="col-md-2">
+
+              <div class="control-group">
+                <%= f.label :numero_pai,"Número", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :numero_pai, :class => 'form-control', :placeholder => "Número da residência do Pai"%>
+                </div>
+                <%= error_span(@aluno[:numero_pai]) %>
+              </div>
+        </div>
+        <div class="col-xs-6">
+  
+              <div class="control-group">
+                <%= f.label :bairro_pai,"Bairro", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :bairro_pai, :class => 'form-control', :placeholder => "Bairro da residência do Pai"  %>
+                </div>
+                <%= error_span(@aluno[:bairro_pai]) %>
+              </div>
+        </div>
+
+        <div class="col-md-4">
+
+              <div class="control-group">
+                <%= f.label :cidade_pai,"Cidade", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :cidade_pai, :class => 'form-control', :placeholder => "Cidade da residência do Pai" %>
+                </div>
+                <%= error_span(@aluno[:cidade_pai]) %>
+              </div>
+        </div>
+
+        <div class="col-md-2">
+
+              <div class="control-group">
+                <%= f.label :estado_pai,"Estado", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :estado_pai, :class => 'form-control', :placeholder => "Estado da residência do Pai"  %>
+                </div>
+                <%= error_span(@aluno[:estado_pai]) %>
+              </div>
+        </div>
+        <div class="col-xs-3">
+  
+              <div class="control-group">
+                <%= f.label :data_nascimento_pai,"Data de Nascimento", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :data_nascimento_pai, :class => 'form-control', :placeholder => "Data nascimento Pai"  %>
+                </div>
+                <%= error_span(@aluno[:data_nascimento_pai]) %>
+              </div>
+        </div>
+
+        <div class="col-md-3">
+
+              <div class="control-group">
+                <%= f.label :escolaridade_pai,"Escolaridade", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :escolaridade_pai, :class => 'form-control', :placeholder => "escolaridade do Pai"  %>
+                </div>
+                <%= error_span(@aluno[:escolaridade_pai]) %>
+              </div>
+        </div>
+
+        <div class="col-md-3">
+
+              <div class="control-group">
+                <%= f.label :profissao_pai,"Profissão", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :profissao_pai, :class => 'form-control', :placeholder => "profissao do Pai"  %>
+                </div>
+                <%= error_span(@aluno[:profissao_pai]) %>
+              </div>
+        </div>
+
+        <div class="col-md-3">
+
+              <div class="control-group">
+                <%= f.label :telefone_pai,"Telefone", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :telefone_pai, :class => 'form-control', :placeholder => "Telefone do Pai"  %>
+                </div>
+                <%= error_span(@aluno[:telefone_pai]) %>
+              </div>
+        </div>
+
+        <div class="col-md-3">
+
+              <div class="control-group">
+                <%= f.label :rg_pai,"R.G.", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :rg_pai, :class => 'form-control', :placeholder => "R.G. do Pai"  %>
+                </div>
+                <%= error_span(@aluno[:rg_pai]) %>
+              </div>
+        </div>
+
+        <div class="col-md-3">
+
+              <div class="control-group">
+                <%= f.label :cpf_pai,"C.P.F.", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :cpf_pai, :class => 'form-control', :placeholder => "C.P.F do Pai"  %>
+                </div>
+                <%= error_span(@aluno[:cpf_pai]) %>
+              </div>
+        </div>
+
+        <div class="col-md-6">
+
+              <div class="control-group">
+                <%= f.label :obs_pai,"Observações", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :obs_pai, :class => 'form-control', :placeholder => "Observações do Pai"  %>
+                </div>
+                <%= error_span(@aluno[:obs_pai]) %>
+              </div>
+        </div>
+      </div>
+      <br>
+      
+      <div class="well well-sm">Dados da Mãe
+      </div>
+          
+        <div class="row">
+           
+           <div class="col-xs-6">
+                <div class="control-group">
+                  <%= f.label :nome_mae,"Nome", :class => 'control-label' %>
+                  <div class="controls">
+                    <%= f.text_field :nome_mae, :class => 'form-control', :placeholder => "Entre como nome do Mãe" %>
+                  </div>
+                  <%= error_span(@aluno[:nome_mae]) %>
+                </div>
+           </div>
+
+           <div class="col-md-4">
+              <div class="control-group">
+                  <%= f.label :endereco_mae,"Endereço", :class => 'control-label' %>
+                  <div class="controls">
+                    <%= f.text_field :endereco_mae, :class => 'form-control', :placeholder => "Entre com o endereço do Mãe" %>
+                  </div>
+                  <%= error_span(@aluno[:endereco_mae]) %>
+              </div>
+          </div>
+
+          <div class="col-md-2">
+              <div class="control-group">
+                <%= f.label :numero_mae,"Número", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :numero_mae, :class => 'form-control', :placeholder => "Número da residência do Mãe"%>
+                </div>
+                <%= error_span(@aluno[:numero_mae]) %>
+             </div>
+          </div>
+      
+          <div class="col-xs-6">
+             <div class="control-group">
+                <%= f.label :bairro_mae,"Bairro", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :bairro_mae, :class => 'form-control', :placeholder => "Bairro da residência do Mãe"  %>
+                </div>
+                <%= error_span(@aluno[:bairro_mae]) %>
+             </div>
+          </div>
+
+          <div class="col-md-4">
+             <div class="control-group">
+                <%= f.label :cidade_mae,"Cidade", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :cidade_mae, :class => 'form-control', :placeholder => "Cidade da residência do Mãe" %>
+                </div>
+                <%= error_span(@aluno[:cidade_mae]) %>
+              </div>
+          </div>
+
+          <div class="col-md-2">
+              <div class="control-group">
+                <%= f.label :estado_mae,"Estado", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :estado_mae, :class => 'form-control', :placeholder => "Estado da residência do Mãe"  %>
+                </div>
+                <%= error_span(@aluno[:estado_mae]) %>
+              </div>
+          </div>
+  
+          <div class="col-xs-3">
+             <div class="control-group">
+                <%= f.label :data_nascimento_mae,"Data de Nascimento", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :data_nascimento_mae, :class => 'form-control', :placeholder => "Data nascimento Mãe"  %>
+                </div>
+                <%= error_span(@aluno[:data_nascimento_mae]) %>
+             </div>
+          </div>
+
+          <div class="col-md-3">
+             <div class="control-group">
+                <%= f.label :escolaridade_mae,"Escolaridade", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :escolaridade_mae, :class => 'form-control', :placeholder => "escolaridade do Mãe"  %>
+                </div>
+                <%= error_span(@aluno[:escolaridade_mae]) %>
+              </div>
+          </div>
+          <div class="col-md-3">
+             <div class="control-group">
+                <%= f.label :profissao_mae,"Profissão", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :profissao_mae, :class => 'form-control', :placeholder => "profissao do Mãe"  %>
+                </div>
+                <%= error_span(@aluno[:profissao_mae]) %>
+              </div>
+          </div>
+
+          <div class="col-md-3">
+             <div class="control-group">
+                <%= f.label :telefone_mae,"Telefone",:class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :telefone_mae, :class => 'form-control', :placeholder => "Telefone do Mãe"  %>
+                </div>
+                <%= error_span(@aluno[:telefone_mae]) %>
+              </div>
+          </div>
+
+          <div class="col-md-3">
+             <div class="control-group">
+                <%= f.label :rg_mae,"R.G.", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :rg_mae, :class => 'form-control', :placeholder => "R.G. do Mãe"  %>
+                </div>
+                <%= error_span(@aluno[:rg_mae]) %>
+              </div>
+          </div>
+
+          <div class="col-md-3">
+             <div class="control-group">
+                <%= f.label :cpf_mae,"C.P.F", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :cpf_mae, :class => 'form-control', :placeholder => "C.P.F do Mãe"  %>
+                </div>
+                <%= error_span(@aluno[:cpf_mae]) %>
+              </div>
+          </div>
+
+          <div class="col-md-6">
+             <div class="control-group">
+                <%= f.label :obs_mae,"Observações", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :obs_mae, :class => 'form-control', :placeholder => "Observações do Mãe"  %>
+                </div>
+                <%= error_span(@aluno[:obs_mae]) %>
+              </div>
+          </div>
+
     </div>
-    
-    <div id="dados_escolares" class="tab-pane">
-            coluna 3
     </div>
 
+    <div id="dados_escolares" class="tab-pane">
+    
+    <br>
+    <div class="well well-sm">Desenvolvimento da escrita</div>
+
+    <div class="row">
+
+        <div class="col-xs-12">
+              <div class="control-group">
+                <%= f.label :escolar_trocas, "Trocas",  :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :escolar_trocas, :class => 'form-control', :placeholder => "Trocas" %>
+                </div>
+                <%= error_span(@aluno[:escolar_trocas]) %>
+              </div>
+        </div>
+
+
+        <div class="col-xs-12">
+              <div class="control-group">
+                <%= f.label :escolar_fala_atual, "Fala Atual",  :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :escolar_fala_atual, :class => 'form-control', :placeholder => "Fala Atual" %>
+                </div>
+                <%= error_span(@aluno[:escolar_fala_atual]) %>
+              </div>
+        </div>
+
+
+        <div class="col-xs-12">
+              <div class="control-group">
+                <%= f.label :escolar_ordens, "Entende Ordens",  :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :escolar_ordens, :class => 'form-control', :placeholder => "Entende Ordens" %>
+                </div>
+                <%= error_span(@aluno[:escolar_ordens]) %>
+              </div>
+        </div>
+
+        <div class="col-xs-12">
+              <div class="control-group">
+                <%= f.label :escolar_idade, "Entrou na escola com ?",  :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :escolar_idade, :class => 'form-control', :placeholder => "Entrou na escola com" %>
+                </div>
+                <%= error_span(@aluno[:escolar_idade]) %>
+              </div>
+        </div>
+
+        <div class="col-xs-12">
+              <div class="control-group">
+                <%= f.label :escolar_numero_escolas, "Número de escolas que frequentou ?",  :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :escolar_numero_escolas, :class => 'form-control', :placeholder => "Número de escolas que frequentou" %>
+                </div>
+                <%= error_span(@aluno[:escolar_numero_escolas]) %>
+              </div>
+        </div>
+
+        <div class="col-xs-12">
+              <div class="control-group">
+                <%= f.label :escolar_aproveitamento, "Aproveitamento ?",  :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :escolar_aproveitamento, :class => 'form-control', :placeholder => "Aproveitamento" %>
+                </div>
+                <%= error_span(@aluno[:escolar_aproveitamento]) %>
+              </div>
+        </div>
+
+        <div class="col-xs-12">
+              <div class="control-group">
+                <%= f.label :escolar_comportamento, "Comportamento ?",  :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :escolar_comportamento, :class => 'form-control', :placeholder => "Comportamento" %>
+                </div>
+                <%= error_span(@aluno[:escolar_comportamento]) %>
+              </div>
+        </div>
+
+      
+        <div class="col-xs-12">
+              <div class="control-group">
+                <%= f.label :escolar_frequenta_escola, "Atualmente frequenta escola? ?",  :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :escolar_frequenta_escola, :class => 'form-control', :placeholder => "Comportamento" %>
+                </div>
+                <%= error_span(@aluno[:escolar_frequenta_escola]) %>
+              </div>
+        </div>
+
+      
+        <div class="col-xs-12">
+              <div class="control-group">
+                <%= f.label :escolar_vida_escolar, "Vida Escolar",  :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :escolar_vida_escolar, :class => 'form-control', :placeholder => "Comportamento" %>
+                </div>
+                <%= error_span(@aluno[:escolar_vida_escolar]) %>
+              </div>
+        </div>
+
+      </div>
+      
 </div>
+
+
+
+
+
+
+
+
 
 
 

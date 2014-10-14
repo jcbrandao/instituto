@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :estados
+
   resources :alunos
 
 root :to => "alunos#index"
