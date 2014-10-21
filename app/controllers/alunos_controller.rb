@@ -73,6 +73,10 @@ class AlunosController < ApplicationController
         :data_nascimento, :data_cadastro, :cpf, :rg,:nome_pai,:endereco_pai,:numero_pai,:bairro_pai,:cidade_pai,:estado_pai,
         :data_nascimento_pai,:escolaridade_pai,:profissao_pai,:telefone_pai, :rg_pai, :cpf_pai, :obs_pai,:nome_mae,:endereco_mae,
         :numero_mae,:bairro_mae,:cidade_mae,:estado_mae,:data_nascimento_mae,:escolaridade_mae,:profissao_mae,:telefone_mae, 
-        :rg_mae, :cpf_mae, :obs_mae )
+        :rg_mae, :cpf_mae, :obs_mae , :escolar_trocas, :escolar_fala_atual , :escolar_ordens , :escolar_idade , :escolar_numero_escolas , 
+        :escolar_aproveitamento , :escolar_comportamento , :escolar_frequenta_escola , :escolar_vida_escolar, :escolar_vida_social,
+        :escolar_vive , :escolar_ambiente_familiar, :escolar_distrair, :escolar_amigos, :saude_medicacao, :saude_acompanhamento_medico, 
+        :saude_nome_medico, :saude_fono, :saude_psico, :saude_fisio, :saude_outros, :saude_tempo, :saude_observacoes, :saude_alergia, 
+        :saude_convenio, :saude_tem_convenio)
     end
 end

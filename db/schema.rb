@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140930105544) do
+ActiveRecord::Schema.define(version: 20141021145808) do
 
   create_table "alunos", force: true do |t|
     t.string   "nome"
     t.string   "celular"
     t.string   "telefone"
     t.boolean  "ativo"
-    t.string   "endereco",                 limit: 80
+    t.string   "endereco",                    limit: 80
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "cidade"
@@ -69,6 +69,23 @@ ActiveRecord::Schema.define(version: 20140930105544) do
     t.string   "escolar_vive"
     t.string   "escolar_distrair"
     t.string   "escolar_amigos"
+    t.string   "escolar_ambiente_familiar"
+    t.string   "saude_medicacao"
+    t.string   "saude_acompanhamento_medico"
+    t.string   "saude_nome_medico"
+    t.boolean  "saude_fono"
+    t.boolean  "saude_psico"
+    t.boolean  "saude_fisio"
+    t.string   "saude_outros"
+    t.string   "saude_tempo"
+    t.string   "saude_observacoes"
+    t.string   "saude_alergia"
+    t.string   "saude_convenio"
+    t.boolean  "saude_tem_convenio"
+    t.boolean  "beneficio_bpc"
+    t.boolean  "beneficio_bf"
+    t.boolean  "beneficio_viva_leite"
+    t.string   "beneficio_outro"
   end
 
   create_table "estados", force: true do |t|
