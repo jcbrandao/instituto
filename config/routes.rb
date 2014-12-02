@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :primeiro_alunos
+
   resources :estados
 
   resources :alunos

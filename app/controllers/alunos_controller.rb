@@ -69,14 +69,28 @@ class AlunosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def aluno_params
-      params.require(:aluno).permit(:nome, :celular, :telefone, :ativo, :endereco, :numero, :bairro, :cidade, :estado, :email, 
-        :data_nascimento, :data_cadastro, :cpf, :rg,:nome_pai,:endereco_pai,:numero_pai,:bairro_pai,:cidade_pai,:estado_pai,
-        :data_nascimento_pai,:escolaridade_pai,:profissao_pai,:telefone_pai, :rg_pai, :cpf_pai, :obs_pai,:nome_mae,:endereco_mae,
-        :numero_mae,:bairro_mae,:cidade_mae,:estado_mae,:data_nascimento_mae,:escolaridade_mae,:profissao_mae,:telefone_mae, 
-        :rg_mae, :cpf_mae, :obs_mae , :escolar_trocas, :escolar_fala_atual , :escolar_ordens , :escolar_idade , :escolar_numero_escolas , 
-        :escolar_aproveitamento , :escolar_comportamento , :escolar_frequenta_escola , :escolar_vida_escolar, :escolar_vida_social,
-        :escolar_vive , :escolar_ambiente_familiar, :escolar_distrair, :escolar_amigos, :saude_medicacao, :saude_acompanhamento_medico, 
-        :saude_nome_medico, :saude_fono, :saude_psico, :saude_fisio, :saude_outros, :saude_tempo, :saude_observacoes, :saude_alergia, 
-        :saude_convenio, :saude_tem_convenio)
+      params.require(:aluno).permit(
+
+        :nome, :celular, :telefone, :ativo, :endereco, :numero, :bairro, :cidade, :estado, :email, :data_nascimento, :data_cadastro, :cpf, :rg,
+        
+        :nome_pai,:endereco_pai,:numero_pai,:bairro_pai,:cidade_pai,:estado_pai,:data_nascimento_pai,:escolaridade_pai,:profissao_pai,:telefone_pai, :rg_pai, :cpf_pai, :obs_pai,
+        
+        :nome_mae,:endereco_mae,:numero_mae,:bairro_mae,:cidade_mae,:estado_mae,:data_nascimento_mae,:escolaridade_mae,:profissao_mae,:telefone_mae, :rg_mae, :cpf_mae, :obs_mae , 
+        
+        :escolar_trocas, :escolar_fala_atual , :escolar_ordens , :escolar_idade , :escolar_numero_escolas ,:escolar_aproveitamento , :escolar_comportamento , :escolar_frequenta_escola , :escolar_vida_escolar, :escolar_vida_social,
+        :escolar_vive , :escolar_ambiente_familiar, :escolar_distrair, :escolar_amigos,
+
+        :saude_medicacao, :saude_acompanhamento_medico, :saude_nome_medico, :saude_fono, :saude_psico, :saude_fisio, :saude_outros, :saude_tempo, :saude_observacoes, :saude_alergia, 
+        :saude_convenio, :saude_tem_convenio, 
+
+        :beneficio_bpc, :beneficio_bf, :beneficio_viva_leite, :beneficio_outro,
+
+        :gestacao_gravidez,:gestacao_desejada, :gestacao_comentarios, :gestacao_mexer, :gestacao_prenatal, :gestacao_doencas, :gestacao_medicamentos,
+        :gestacao_sobre,
+
+        :nascimento_local, :nascimento_parto, :nascimento_peso, :nascimento_demorado, :nascimento_cordao, :nascimento_oxigenio,
+        :nascimento_doencas,  :nascimento_posicao, :nascimento_reacoes, :nascimento_chorou, :nascimento_roxo, :nascimento_observacoes
+
+        )
     end
 end

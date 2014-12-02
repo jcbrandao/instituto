@@ -821,7 +821,7 @@
 <%
 #começa aqui
 %>
-
+    
     <div id="beneficios" class="tab-pane">
     
       <br>
@@ -862,7 +862,7 @@
 
             <div class="col-xs-12">
                   <div class="control-group">
-                    <%= f.label :beneficio_outro, "Benefício Outros - Especificar!",  :class => 'control-label' %>
+                    <%= f.label :beneficio_outro, "Outros Benefícios- Especificar!",  :class => 'control-label' %>
                     <div class="controls">
                   <%= f.text_field :beneficio_outro, :class => 'form-control', :placeholder => "Especificar outros benefícios" %>
                     </div>
@@ -870,7 +870,7 @@
                   </div>
             </div>
 
-        </div>  
+        </div> 
     </div>
 
 <%
@@ -878,8 +878,932 @@
 %>
 
 
+<%
+#começa aqui
+%>
 
+    <div id="gestação" class="tab-pane">
+    
+      <br>
+      <div class="well well-sm">Gestação</div>
+
+        <div class="row">
+
+            <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :gestacao_gravidez, "Como foi a gravidez?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :gestacao_gravidez, :class => 'form-control', :placeholder => "Gravidez" %>
+                   </div>
+                    <%= error_span(@aluno[:gestacao_gravidez]) %>
+                  </div>
+            </div>
+
+            <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :gestacao_desejada, "A criança foi desejada?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :gestacao_gravidez, :class => 'form-control', :placeholder => "Gravidez" %>
+                    </div>
+                    <%= error_span(@aluno[:gestacao_desejada]) %>
+                  </div>
+            </div>
+
+            <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :gestacao_mexer, "Sentiu a criança mexer?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :gestacao_mexer %>
+                    </div>
+                    <%= error_span(@aluno[:gestacao_mexer]) %>
+                  </div>
+            </div>
+
+           
+            <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :gestacao_prenatal, "Fez pré-natal ",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :gestacao_mexer %>
+                    </div>
+                    <%= error_span(@aluno[:gestacao_mexer]) %>
+                  </div>
+            </div>
+
+            <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :gestacao_doencas, "Doenças na Gravidez?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :gestacao_doencas, :class => 'form-control', :placeholder => "Doenças na Gravidez" %>
+                    </div>
+                    <%= error_span(@aluno[:gestacao_doencas]) %>
+                  </div>
+            </div>
+
+            <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :gestacao_medicamentos, "Usou algum medicamento durante a gravidez? Quais?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :gestacao_medicamentos, :class => 'form-control', :placeholder => "Medicamentos na Gravidez" %>
+                    </div>
+                    <%= error_span(@aluno[:gestacao_medicamentos]) %>
+                  </div>
+            </div>
+
+            <div class="col-xs-12">
+                  <div class="control-group">
+                    <%= f.label :gestacao_sobre, "Observações sobre gravidez? ",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :gestacao_sobre, :class => 'form-control', :placeholder => "Observações" %>
+                    </div>
+                    <%= error_span(@aluno[:gestacao_sobre]) %>
+                  </div>
+            </div>
+        </div>
+
+     <br>
+      
+      <div class="well well-sm">Condições de Nascimento</div>
+          
+        <div class="row">
+
+
+            <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :nascimento_local, "Local de nascimento?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :nascimento_local, :class => 'form-control', :placeholder => "hospital/casa" %>
+                    </div>
+                    <%= error_span(@aluno[:nascimento_local]) %>
+                  </div>
+            </div>
+
+        </div>  
+
+    <br>
+
+    <div class="well well-sm">Parto</div>
+
+        <div class="row">
+
+            <div class="col-xs-12">
+                  <div class="control-group">
+                    <%= label_tag "Tipo nascimento_parto:" %>&nbsp;&nbsp;&nbsp;
+                    <%= radio_button_tag :nascimento_parto, '1' %><%= label_tag :purpose_feedback, 'Normal' ,:checked => true %> &nbsp;&nbsp;
+                    <%= radio_button_tag :nascimento_parto, '2' %><%= label_tag :purpose_prayer, '     Cesária' %>&nbsp;&nbsp;&nbsp;
+                    <%= radio_button_tag :nascimento_parto, '3' %><%= label_tag :purpose_praise, '     Hospitalar' %>&nbsp;&nbsp;&nbsp;
+                    <%= radio_button_tag :nascimento_parto, '4' %><%= label_tag :purpose_bug, '    Casa' %>&nbsp;&nbsp;&nbsp;
+                    <%= radio_button_tag :nascimento_parto, '5' %><%= label_tag :purpose_other, '     Outros' %>
+                    <%= error_span(@aluno[:nascimento_parto]) %>
+                  </div>
+
+            </div>
+
+            <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :nascimento_peso, "Peso ao nascimento?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :nascimento_peso, :class => 'form-control', :placeholder => "Peso" %>
+                    </div>
+                    <%= error_span(@aluno[:nascimento_peso]) %>
+                  </div>
+            </div>
+
+            <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :nascimento_demorado, "Parto demorado ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :nascimento_demorado, :class => 'form-control', :placeholder => "Parto" %>
+                    </div>
+                    <%= error_span(@aluno[:nascimento_demorado]) %>
+                  </div>
+            </div>
+        </div>
+  
+
+      <br>
+
+    <div class="well well-sm">Ao Nascer</div>
+
+        <div class="row">
+        
+            <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :nascimento_cordao, "Circular de cordão?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :nascimento_cordao, :class => 'form-control', :placeholder => "cordão" %>
+                    </div>
+                    <%= error_span(@aluno[:nascimento_cordao]) %>
+                  </div>
+            </div>
+
+            <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :nascimento_oxigenio, "Oxigênio ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :nascimento_oxigenio, :class => 'form-control', :placeholder => "Oxigênio" %>
+                    </div>
+                    <%= error_span(@aluno[:nascimento_oxigenio]) %>
+                  </div>
+            </div>
+
+            <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :nascimento_doencas, "Doenças pós-parto ? Quais ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :nascimento_doencas, :class => 'form-control', :placeholder => "doencas" %>
+                    </div>
+                    <%= error_span(@aluno[:nascimento_doencas]) %>
+                  </div>
+            </div>
+
+            <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :nascimento_posicao, "Posição de nascimento ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :nascimento_posicao, :class => 'form-control', :placeholder => "Posição" %>
+                    </div>
+                    <%= error_span(@aluno[:nascimento_posicao]) %>
+                  </div>
+            </div>
+
+            <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :nascimento_reacoes, "Primeiras reações ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :nascimento_reacoes, :class => 'form-control', :placeholder => "reações" %>
+                    </div>
+                    <%= error_span(@aluno[:nascimento_reacoes]) %>
+                  </div>
+            </div>
+
+            <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :nascimento_chorou, "Chorou lógo ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :nascimento_chorou, :class => 'form-control', :placeholder => "Chorou" %>
+                    </div>
+                    <%= error_span(@aluno[:nascimento_chorou]) %>
+                  </div>
+            </div>
+
+            <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :nascimento_roxo, "Ficou roxo ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :nascimento_roxo, :class => 'form-control', :placeholder => "roxo" %>
+                    </div>
+                    <%= error_span(@aluno[:nascimento_roxo]) %>
+                  </div>
+            </div>
+
+            <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :nascimento_observacoes, "Observações após o nascimento ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :nascimento_observacoes, :class => 'form-control', :placeholder => "O" %>
+                    </div>
+                    <%= error_span(@aluno[:nascimento_observacoes]) %>
+                  </div>
+            </div>
+
+        </div>
+  </div>
+<%
+#Termina aqui
+%>
+
+
+<%
+#começa aqui
+%>
+
+    <div id="vida" class="tab-pane">
+    
+      <br>
+      <div class="well well-sm">Primeiro ano de vida</div>
+
+        <div class="row">
+
+            <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_relato, "Relato",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_relato, :class => 'form-control', :placeholder => "Relato" %>
+                   </div>
+                    <%= error_span(@aluno[:primeiro_relato]) %>
+                  </div>
+            </div>
+
+
+            <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_criado, "Com quem foi criado ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_criado, :class => 'form-control', :placeholder => "Criado" %>
+                   </div>
+                    <%= error_span(@aluno[:primeiro_criado]) %>
+                  </div>
+            </div>
+
+            <div class="col-xs-12">
+                  <div class="control-group">
+                    <%= f.label :primeiro_doenca, "Teve alguma doença grave? Qual?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_doenca, :class => 'form-control', :placeholder => "Doença" %>
+                   </div>
+                    <%= error_span(@aluno[:primeiro_doenca]) %>
+                  </div>
+            </div>
+        </div>
+        
+      <br>
+      <div class="well well-sm">Doenças na infância</div>
+
+        <div class="row">
+
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_alergia, "Alergia ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_alergia %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_alergia]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_rinite, "Rinite ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_rinite %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_rinite]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_asma, "Asma ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_asma %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_asma]) %>
+                  </div>
+            </div>
+ 
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_adenoide, "Adenoide ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_adenoide %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_adenoide]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_bronquite, "Bronquite ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_bronquite %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_bronquite]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_otite, "Otite ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_otite %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_otite]) %>
+                  </div>
+            </div>
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_garganta, "Garganta ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_garganta %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_garganta]) %>
+                  </div>
+            </div>
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_bronco, "Broncopneumonia ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_bronco %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_bronco]) %>
+                  </div>
+            </div>
+
+           <div class="col-xs-8">
+                  <div class="control-group">
+                    <%= f.label :primeiros_outros, "Outros?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiros_outros, :class => 'form-control', :placeholder => "Outros" %>
+                   </div>
+                    <%= error_span(@aluno[:primeiros_outros]) %>
+                  </div>
+            </div>
+ 
+           <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_internado, "Foi internado ? Qual a causa ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_internado, :class => 'form-control', :placeholder => "internado" %>
+                   </div>
+                    <%= error_span(@aluno[:primeiro_internado]) %>
+                  </div>
+            </div>
+
+           <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_acidentes, "Acidentes ? Quais ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_acidentes, :class => 'form-control', :placeholder => "acidentes" %>
+                   </div>
+                    <%= error_span(@aluno[:primeiro_acidentes]) %>
+                  </div>
+            </div>
+
+           <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_sono, "Como é o sono?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_sono, :class => 'form-control', :placeholder => "sono" %>
+                   </div>
+                    <%= error_span(@aluno[:primeiro_sono]) %>
+                  </div>
+            </div>
+
+           <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_soliloquio, "Solilóquio ? (fala sozinho)",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_soliloquio, :class => 'form-control', :placeholder => "fala" %>
+                   </div>
+                    <%= error_span(@aluno[:primeiro_soliloquio]) %>
+                  </div>
+            </div>
+
+
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_epilepsia, "Eplepsia ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_epilepsia %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_epilepsia]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_convulsao, "Convulsao ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_convulsao %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_convulsao]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_escoplesia, "Escolplesia noturna ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_escoplesia %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_escoplesia]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_bruxismo, "Bruxismo ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_bruxismo%>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_bruxismo]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_sonambulismo, "Sonambulismo ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_sonambulismo %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_sonambulismo]) %>
+                  </div>
+            </div>
+   
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_pesadelo, "Pesadelo ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_pesadelo %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_pesadelo]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_ronco, "Ronco ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_bronco %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_ronco]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_baba, "Baba noturna ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_baba%>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_baba]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_respira, "Respira pela boca ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_respira %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_respira]) %>
+                  </div>
+            </div>
+             
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_transpira, "Transpira ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_transpira %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_transpira]) %>
+                  </div>
+            </div>
+        
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_eneurese, "Enurese Noturna?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_eneurese %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_eneurese]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_eneurese, "Enurese Diurna?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_eneurese %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_eneurese]) %>
+                  </div>
+            </div>
+            
+            <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_unha, "Roe unha?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_unha %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_unha]) %>
+                  </div>
+            </div>
+
+            <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_mao, "Mão na boca ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_mao %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_mao]) %>
+                  </div>
+            </div>
+
+            <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_boca, "Fica de boca aberta?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_boca%>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_boca]) %>
+                  </div>
+            </div>
+
+            <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_chupa, "Chupa o dedo?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_chupa %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_chupa]) %>
+                  </div>
+            </div>
+
+            <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_chupeta, "Chupeta ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_chupeta %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_chupeta]) %>
+                  </div>
+            </div>
+
+            <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_mamadeira, "Mamadeira?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_mamadeira %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_mamadeira]) %>
+                  </div>
+            </div>
+
+           <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_audicao, "Audição ? ",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_audicao, :class => 'form-control', :placeholder => "fala" %>
+                   </div>
+                    <%= error_span(@aluno[:primeiro_audicao]) %>
+                  </div>
+            </div>
+ 
+           <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_visao, "Visão ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_visao, :class => 'form-control', :placeholder => "fala" %>
+                   </div>
+                    <%= error_span(@aluno[:primeiro_visao]) %>
+                  </div>
+            </div>
+  
+           <div class="col-xs-12">
+                  <div class="control-group">
+                    <%= f.label :primeiro_sexulaidade, "Sexualidade ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_sexualidade, :class => 'form-control', :placeholder => "fala" %>
+                   </div>
+                    <%= error_span(@aluno[:primeiro_sexualidade]) %>
+                  </div>
+            </div>
+     </div>
+
+      <br>
+      <div class="well well-sm">Alimentação</div>
+
+        <div class="row">
+
+
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_mamou, "Mamou logo ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_mamou %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_mamou]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_engolia, "Engolia ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_engolia %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_engolia]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_vomitava, "Vomitava ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_vomitava%>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_vomitava]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_engasgava, " Engasgava ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_engasgava %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_engasgava]) %>
+                  </div>
+            </div>
+ 
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_succao, "Sucção forte?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_succao%>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_succao]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-2">
+                  <div class="control-group">
+                    <%= f.label :primeiro_refluxo, "Refluxo ?",  :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.check_box :primeiro_refluxo %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_refluxo]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-4">
+                  <div class="control-group">
+                    <%= f.label :primeiro_amamentacao, "Amamentação no peito até que idade ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_amamentacao, :class => 'form-control', :placeholder => "Amamentação" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_amamentacao]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-4">
+                  <div class="control-group">
+                    <%= f.label :primeiro_mamadeira_01, "Usou mamadeira ? até que idade ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_mamadeira_01, :class => 'form-control', :placeholder => "Mamadeira" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_mamadeira_01]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-4">
+                  <div class="control-group">
+                    <%= f.label :primeiro_inicio_alimentacao, "Em que idade iniciou a alimentação salgada?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_inicio_alimentacao, :class => 'form-control', :placeholder => "iniciou" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_inicio_alimentacao]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-12">
+                  <div class="control-group">
+                    <%= f.label :primeiro_concistencia, "Consistência ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_concistencia, :class => 'form-control', :placeholder => "Consistência" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_concistencia]) %>
+                  </div>
+            </div>
+        </div>
+
+      <br>
+      <div class="well well-sm">Atitude no desmame</div>
+
+        <div class="row">
+
+             <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_seio, "Seio ? Como parou?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_seio, :class => 'form-control', :placeholder => "Seio" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_seio]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_mamadeira_02, "Mamadeira ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_mamadeira_02, :class => 'form-control', :placeholder => "Mamadeira" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_mamadeira_02]) %>
+                  </div>
+            </div>
+        
+             <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_rejeitou, "Rejeitou alimentação alguma vez ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_rejeitou, :class => 'form-control', :placeholder => "Regeitou" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_rejeitou]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_tomada ,"Atitude Tomada",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_tomada, :class => 'form-control', :placeholder => "Atituide" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_tomada]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_super ,"Foi super alimentado",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_super, :class => 'form-control', :placeholder => "Atituide" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_super]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_solidos ,"Quando iniciou alimentos sólidos ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_solidos, :class => 'form-control', :placeholder => "Atituide" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_solidos]) %>
+                  </div>
+            </div>
+          
+             <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_atual ,"Alimentação Atual",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_atual, :class => 'form-control', :placeholder => "Atituide" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_atual]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_engolir ,"Mastiga para engolir",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_engolir, :class => 'form-control', :placeholder => "Engolir" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_engolir]) %>
+                  </div>
+            </div>
+
+
+             <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_engolir_obs ,"Observação",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_engolir_obs, :class => 'form-control', :placeholder => "Observação" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_engolir_obs]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_fatos ,"Fatos relacionados de 2 a 4 anos", :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_fatos, :class => 'form-control', :placeholder => "Fatos" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_fatos]) %>
+                  </div>
+            </div>
+     </div>
+
+      <br>
+      <div class="well well-sm">Desenvolvimento neuropsicomotor</div>
+
+        <div class="row">
+
+             <div class="col-xs-12">
+                  <div class="control-group">
+                    <%= f.label :primeiro_sustentou, "Sustentou a cabeça com ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_sustentou, :class => 'form-control', :placeholder => "Sustentou" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_sustentou]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_sentou, "Sentou ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_sentou, :class => 'form-control', :placeholder => "Sentou" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_sentou]) %>
+                  </div>
+            </div>
+             <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_engatinhou, "Engatinhou ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_engatinhou, :class => 'form-control', :placeholder => "Engatinhou" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_engatinhou]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_pe, "Ficou em pé ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_pe, :class => 'form-control', :placeholder => "Ficou em pé" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_pe]) %>
+                  </div>
+            </div>
+             <div class="col-xs-6">
+                  <div class="control-group">
+                    <%= f.label :primeiro_andou, "Andou ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_andou, :class => 'form-control', :placeholder => "Andou" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_andou]) %>
+                  </div>
+            </div>
+
+             <div class="col-xs-12">
+                  <div class="control-group">
+                    <%= f.label :primeiro_falou, "Falou com ?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_falou, :class => 'form-control', :placeholder => "Falou" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_falou]) %>
+                  </div>
+            </div>
+      </div>
+ 
+
+      <br>
+      <div class="well well-sm">Desenvolvimento da Fala</div>
+
+        <div class="row">
+
+             <div class="col-xs-12">
+                  <div class="control-group">
+                    <%= f.label :primeiro_trocas, "Trocas?",  :class => 'control-label' %>
+                    <div class="controls">
+                  <%= f.text_field :primeiro_trocas, :class => 'form-control', :placeholder => "Trocas" %>
+                    </div>
+                    <%= error_span(@aluno[:primeiro_trocas]) %>
+                  </div>
+            </div>
+        </div>
 </div>
+
+  
+<%
+#Termina aqui
+%>
+
+
 
 
 <%

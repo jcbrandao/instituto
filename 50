@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20141125100649_add_primeiro02_to_alunos.rb

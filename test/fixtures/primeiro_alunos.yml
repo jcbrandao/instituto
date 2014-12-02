@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  relato: MyString
+  criado: MyString
+  doenca: MyString
+  alergia: false
+  rinite: false
+  asma: false
+  adenoide: false
+  bronquite: false
+  otite: false
+  garganta: false
+  bronco: false
+  outros: MyString
+  alunos_id: 
+
+two:
+  relato: MyString
+  criado: MyString
+  doenca: MyString
+  alergia: false
+  rinite: false
+  asma: false
+  adenoide: false
+  bronquite: false
+  otite: false
+  garganta: false
+  bronco: false
+  outros: MyString
+  alunos_id: 
