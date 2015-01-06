@@ -89,7 +89,15 @@ class AlunosController < ApplicationController
         :gestacao_sobre,
 
         :nascimento_local, :nascimento_parto, :nascimento_peso, :nascimento_demorado, :nascimento_cordao, :nascimento_oxigenio,
-        :nascimento_doencas,  :nascimento_posicao, :nascimento_reacoes, :nascimento_chorou, :nascimento_roxo, :nascimento_observacoes
+        :nascimento_doencas,  :nascimento_posicao, :nascimento_reacoes, :nascimento_chorou, :nascimento_roxo, :nascimento_observacoes,
+
+        :primeiro_relato, :primeiro_criado, :primeiro_doenca, :primeiro_alergia, :primeiro_rinite, :primeiro_asma, :primeiro_adenoide, :primeiro_bronquite, :primeiro_otite, :primeiro_garganta,
+        :primeiro_bronco, :primeiros_outros, :primeiro_internado, :primeiro_epilepsia, :primeiro_convulsao, :primeiro_acidentes, :primeiro_sono, :primeiro_soliloquio, :primeiro_escoplesia,
+        :primeiro_bruxismo, :primeiro_sonambulismo, :primeiro_pesadelo, :primeiro_ronco, :primeiro_baba, :primeiro_respira, :primeiro_transpira, :primeiro_eneurese, :primeiro_audicao,
+        :primeiro_visao, :primeiro_unha, :primeiro_mao, :primeiro_boca, :primeiro_chupa, :primeiro_chupeta, :primeiro_mamadeira, :primeiro_sexualidade, :primeiro_mamou, :primeiro_engolia,
+        :primeiro_vomitava, :primeiro_engasgava, :primeiro_succao, :primeiro_refluxo, :primeiro_amamentacao, :primeiro_mamadeira_01, :primeiro_inicio_alimentacao, :primeiro_concistencia,
+        :primeiro_seio, :primeiro_mamadeira_02, :primeiro_rejeitou, :primeiro_tomada, :primeiro_super, :primeiro_solidos, :primeiro_atual, :primeiro_engolir, :primeiro_engolir_obs, :primeiro_fatos,
+        :primeiro_sustentou, :primeiro_sentou, :primeiro_pe, :primeiro_andou, :primeiro_falou, :primeiro_trocas, :primeiro_engatinhou
 
         )
     end

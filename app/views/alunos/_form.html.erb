@@ -383,8 +383,7 @@
       </div>
       <br>
       
-      <div class="well well-sm">Dados da Mãe
-      </div>
+      <div class="well well-sm">Dados da Mãe</div>
           
         <div class="row">
            
@@ -523,7 +522,7 @@
     <div id="dados_escolares" class="tab-pane">
     
     <br>
-    <div class="well well-sm">Desenvolvimento da escrita</div>
+    <div class="well well-sm">Desenvolvimento da Escrita</div>
 
     <div class="row">
 
@@ -988,12 +987,12 @@
 
             <div class="col-xs-12">
                   <div class="control-group">
-                    <%= label_tag "Tipo nascimento_parto:" %>&nbsp;&nbsp;&nbsp;
-                    <%= radio_button_tag :nascimento_parto, '1' %><%= label_tag :purpose_feedback, 'Normal' ,:checked => true %> &nbsp;&nbsp;
-                    <%= radio_button_tag :nascimento_parto, '2' %><%= label_tag :purpose_prayer, '     Cesária' %>&nbsp;&nbsp;&nbsp;
-                    <%= radio_button_tag :nascimento_parto, '3' %><%= label_tag :purpose_praise, '     Hospitalar' %>&nbsp;&nbsp;&nbsp;
-                    <%= radio_button_tag :nascimento_parto, '4' %><%= label_tag :purpose_bug, '    Casa' %>&nbsp;&nbsp;&nbsp;
-                    <%= radio_button_tag :nascimento_parto, '5' %><%= label_tag :purpose_other, '     Outros' %>
+                    <%= label_tag "Tipo de Parto:" %>&nbsp;&nbsp;&nbsp;
+                    <%= f.radio_button :nascimento_parto, '1' %><%= label_tag :purpose_feedback, 'Normal' ,:checked => true %> &nbsp;&nbsp;
+                    <%= f.radio_button :nascimento_parto, '2' %><%= label_tag :purpose_prayer, '     Cesária' %>&nbsp;&nbsp;&nbsp;
+                    <%= f.radio_button :nascimento_parto, '3' %><%= label_tag :purpose_praise, '     Hospitalar' %>&nbsp;&nbsp;&nbsp;
+                    <%= f.radio_button :nascimento_parto, '4' %><%= label_tag :purpose_bug, '    Casa' %>&nbsp;&nbsp;&nbsp;
+                    <%= f.radio_button :nascimento_parto, '5' %><%= label_tag :purpose_other, '     Outros' %>
                     <%= error_span(@aluno[:nascimento_parto]) %>
                   </div>
 
