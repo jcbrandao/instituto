@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150106135856) do
+ActiveRecord::Schema.define(version: 20150324153013) do
 
   create_table "alunos", force: true do |t|
     t.string   "nome"
@@ -172,6 +172,25 @@ ActiveRecord::Schema.define(version: 20150106135856) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "ciclo"
+    t.string   "ra"
+    t.string   "idpdi"
+    t.string   "deficiencia"
+    t.date     "data_fechamento_diagnostico"
+    t.string   "escola_origem"
+    t.string   "naturalidade"
+    t.string   "irmaos"
+    t.string   "quantas"
+    t.string   "idade"
+    t.text     "antecedentes"
+    t.text     "caracteristicas"
+    t.text     "opiniao"
+    t.text     "outra_natureza"
+    t.string   "tipo_local"
+    t.string   "saude"
+    t.string   "uso_medicamentos"
+    t.string   "relatorio"
+    t.string   "carteira_sus"
   end
 
   create_table "estados", force: true do |t|

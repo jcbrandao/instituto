@@ -230,6 +230,89 @@
         </div>
       </div>
 
+      <div class="row">
+
+        <div class="col-xs-3">
+  
+              <div class="control-group">
+                <%= f.label :naturalidade, "Naturalidade",:class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :naturalidade, :class => 'form-control', :placeholder => "Naturalidade"  %>
+                </div>
+                <%= error_span(@aluno[:naturalidade]) %>
+              </div>
+        </div>
+
+        <div class="col-md-3">
+
+              <div class="control-group">
+                <%= f.label :ciclo, "Ciclo/Ano.",:class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :ciclo, :class => 'form-control', :placeholder => "Ciclo/Ano"  %>
+                </div>
+                <%= error_span(@aluno[:ciclo]) %>
+              </div>
+        </div>
+
+        <div class="col-md-3">
+
+              <div class="control-group">
+                <%= f.label :ra,"R.A.", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :ra, :class => 'form-control', :placeholder => "R.A. do aluno"  %>
+                </div>
+                <%= error_span(@aluno[:ra]) %>
+              </div>
+        </div>
+
+        <div class="col-md-3">
+
+              <div class="control-group">
+                <%= f.label :idpdi, "SIGM.",:class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :idpdi, :class => 'form-control', :placeholder => "SIGM"  %>
+                </div>
+                <%= error_span(@aluno[:idpdi]) %>
+              </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-xs-4">
+  
+              <div class="control-group">
+                <%= f.label :deficiencia, "Área de Deficiência",:class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :deficiencia, :class => 'form-control', :placeholder => "Área de Deficiência"  %>
+                </div>
+                <%= error_span(@aluno[:deficiencia]) %>
+              </div>
+        </div>
+
+        <div class="col-md-4">
+
+              <div class="control-group">
+                <%= f.label :data_fechamento_diagnostico, "Data Fechamento do Diagnóstico.",:class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :data_fechamento_diagnostico, :class => 'form-control', :placeholder => "Data Fechamento do Diagnóstico"  %>
+                </div>
+                <%= error_span(@aluno[:data_nascimento]) %>
+              </div>
+        </div>
+
+        <div class="col-md-4">
+
+              <div class="control-group">
+                <%= f.label :escola_origem,"Escola Origem", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :escola_origem, :class => 'form-control', :placeholder => "Escola Origem"  %>
+                </div>
+                <%= error_span(@aluno[:escola_origem]) %>
+              </div>
+        </div>
+
+      </div>
 
     </div>
    
@@ -517,6 +600,92 @@
           </div>
 
     </div>
+    <br>
+      <div class="well well-sm">Histórico Familiar</div>
+          
+        <div class="row">
+           
+           <div class="col-xs-4">
+                <div class="control-group">
+                  <%= f.label :irmaos,"Tem irmãos? Quantos e Idade?", :class => 'control-label' %>
+                  <div class="controls">
+                    <%= f.text_field :irmaos, :class => 'form-control', :placeholder => "irmãos" %>
+                  </div>
+                  <%= error_span(@aluno[:irmaos]) %>
+                </div>
+           </div>
+
+           <div class="col-md-4">
+              <div class="control-group">
+                  <%= f.label :quantas,"Quantas pessoas moram na Casa:", :class => 'control-label' %>
+                  <div class="controls">
+                    <%= f.text_field :quantas, :class => 'form-control', :placeholder => "Quantas pessoas" %>
+                  </div>
+                  <%= error_span(@aluno[:quantas]) %>
+              </div>
+          </div>
+
+          <div class="col-md-4">
+              <div class="control-group">
+                <%= f.label :idade,"Idade em que o aluno entrou na escola", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :idade, :class => 'form-control', :placeholder => "Idade em que o aluno"%>
+                </div>
+                <%= error_span(@aluno[:idade]) %>
+             </div>
+          </div>
+      
+           <div class="col-xs-4">
+                <div class="control-group">
+                  <%= f.label :antecedentes,"Histórico escolar e antecedentes relevantes:", :class => 'control-label' %>
+                  <div class="controls">
+                    <%= f.text_field :antecedentes, :class => 'form-control', :placeholder => "Entre como nome do Mãe" %>
+                  </div>
+                  <%= error_span(@aluno[:antecedentes]) %>
+                </div>
+           </div>
+
+           <div class="col-md-4">
+              <div class="control-group">
+                  <%= f.label :caracteristicas,"Características do aluno.", :class => 'control-label' %>
+                  <div class="controls">
+                    <%= f.text_field :caracteristicas, :class => 'form-control', :placeholder => "Caracteristica" %>
+                  </div>
+                  <%= error_span(@aluno[:caracteristicas]) %>
+              </div>
+          </div>
+
+          <div class="col-md-4">
+              <div class="control-group">
+                <%= f.label :opiniao,"Opinião da Família sobre a vida escolar.", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :opiniao, :class => 'form-control', :placeholder => "Opinião"%>
+                </div>
+                <%= error_span(@aluno[:opiniao]) %>
+             </div>
+          </div>
+           <div class="col-xs-4">
+                <div class="control-group">
+                  <%= f.label :outra_natureza,"Antecedentes de outra natureza.", :class => 'control-label' %>
+                  <div class="controls">
+                    <%= f.text_field :outra_natureza, :class => 'form-control', :placeholder => "Outra natureza" %>
+                  </div>
+                  <%= error_span(@aluno[:outra_natureza]) %>
+                </div>
+           </div>
+
+           <div class="col-md-4">
+              <div class="control-group">
+                  <%= f.label :tipo_local,"Tipo/Local/Periodicidade", :class => 'control-label' %>
+                  <div class="controls">
+                    <%= f.text_field :tipo_local, :class => 'form-control', :placeholder => "tipo local" %>
+                  </div>
+                  <%= error_span(@aluno[:tipo_local]) %>
+              </div>
+          </div>
+
+    </div>
+
     </div>
 
     <div id="dados_escolares" class="tab-pane">
@@ -812,6 +981,53 @@
         </div>
 
     </div>
+    <br>
+    <div class="well well-sm">Histórico</div>
+
+    <div class="row">
+
+            <div class="col-md-4">
+              <div class="control-group">
+                <%= f.label :saude,"Tem problemas de Saúde", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :saude, :class => 'form-control', :placeholder => "Saúde"%>
+                </div>
+                <%= error_span(@aluno[:saude]) %>
+             </div>
+          </div>
+           <div class="col-xs-4">
+                <div class="control-group">
+                  <%= f.label :uso_medicamentos,"Faz uso de medicamentos controlados? Quais?", :class => 'control-label' %>
+                  <div class="controls">
+                    <%= f.text_field :uso_medicamentos, :class => 'form-control', :placeholder => "Uso medicamentos" %>
+                  </div>
+                  <%= error_span(@aluno[:uso_medicamentos]) %>
+                </div>
+           </div>
+
+           <div class="col-md-4">
+              <div class="control-group">
+                  <%= f.label :relatorio,"Existe relatório com recomendação de saúde? Anexar", :class => 'control-label' %>
+                  <div class="controls">
+                    <%= f.text_field :relatorio, :class => 'form-control', :placeholder => "Relatório" %>
+                  </div>
+                  <%= error_span(@aluno[:relatorio]) %>
+              </div>
+          </div>
+
+          <div class="col-md-4">
+              <div class="control-group">
+                <%= f.label :carteira_sus,"Número do Prontuário Centro de Saúde", :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :carteira_sus, :class => 'form-control', :placeholder => "Carteira Sus"%>
+                </div>
+                <%= error_span(@aluno[:carteira_sus]) %>
+             </div>
+          </div>
+
+    </div>
+
+    <br>
     </div>
 <%
 #Termina aqui
