@@ -1,6 +1,5 @@
 class Aluno < ActiveRecord::Base
-
-
-	validates_presence_of :nome
+  has_many :pdialunos
+  validates_presence_of :nome
 	
 end

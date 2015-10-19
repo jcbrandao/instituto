@@ -1,0 +1,129 @@
+<%= simple_form_for @pdialuno, :html => { :class => "form-horizontal pdialuno" } do |f| %>
+
+  <% if @pdialuno.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title">Ocorreu <%= pluralize(@pdialuno.errors.count, "erro(s)") %> ao tentar salvar os dados deste pdialuno:</h3>
+      
+      </div>
+          <div class="panel-body">
+            <ul>
+               <% @pdialuno.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+               <% end %>
+            </ul>
+          </div>
+      </div>
+  <% end %>
+<%
+#  
+# começar o mudar o codigo para nav tabs
+#
+%>
+
+<ul class="nav nav-tabs" id="tabs">
+
+    <li class="active">
+        <a href="#Escola">1 - Escola Regular</a>
+    </li>
+
+    <li class="">
+        <a href="#Avaliacao">2- Avaliação Inicial do Aluno no AEE</a>
+    </li>
+
+    <li class="">
+        <a href="#Organizacao">3- Organização do Serviço de Apoio Pedagógico Especializado</a>
+    </li>
+
+</ul>  
+
+<%
+#
+#começar a colocar os dados dentro das nav
+#
+%>
+<div class="tab-content" id="my-tab-content">
+
+    <div id="Escola" class="tab-pane active">
+    
+    <br>
+    <div class="well well-sm">Dados do Aluno</div>
+
+    <div class="row">
+
+        <div class="col-xs-12">
+              <div class="control-group">
+                <%= f.label :aluno_id, "Nome",  :class => 'control-label' %>
+                <div class="controls">
+                <%= f.collection_select(:aluno_id, Aluno.all, :id, :nome, include_blank: 'Selecione') %>
+                </div>
+                <%= error_span(@pdialuno[:aluno_id]) %>
+              </div>
+        </div>
+
+        <div class="col-md-12">
+
+               <div class="control-group">
+                    <%= f.label :Ainteresse, "Área de Interesse",:class => 'control-label' %>
+                      <div class="controls">
+                          <%= f.text_area :Ainteresse, "ROWS" => 5, :class => 'form-control', :placeholder => "" %>
+                      </div>
+                    <%= error_span(@pdialuno[:Ainteresse]) %>
+                </div>
+        </div>
+
+        <div class="col-md-12">
+
+               <div class="control-group">
+                    <%= f.label :Ainteresse, "Área de Atenção",:class => 'control-label' %>
+                      <div class="controls">
+                        <%= f.text_area :Ainteresse, "ROWS" => 5, :class => 'form-control', :placeholder => "" %>
+                      </div>
+                    <%= error_span(@pdialuno[:Ainteresse]) %>
+                  </div>
+            </div>
+
+        </div>
+
+
+</div>
+
+<%
+#Termina aqui
+%>
+
+
+
+
+<%
+#
+# a partir daqui esta original
+# 
+%>
+
+<br></br>
+<div class="panel panel-default">
+  <div class="panel-body">
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            pdialunos_path, :class => 'btn btn-default' %>
+</div>
+
+
+<% end %>
+
+<%
+#
+# colocar o script das tabs nav
+#
+%>
+
+<script type="text/javascript">
+    $(function() {
+        $('#tabs a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+    })
+
+</script>

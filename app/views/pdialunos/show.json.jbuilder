@@ -1,0 +1,1 @@
+json.extract! @pdialuno, :id, :aluno_id, :Ainteresse, :Aatencao, :Aconcentracao, :Acompreencao, :Ahabilidades, :Apensamentos, :Aexpressao, :Alinguagem, :Apercepcoes_visuais, :Apercepcoes_diferenca, :Aorientacoes, :created_at, :updated_at

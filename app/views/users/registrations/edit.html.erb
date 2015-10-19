@@ -1,0 +1,105 @@
+<div class="container droppedHover">
+         
+    <h2 class="text-center" contenteditable="false">Por favor, forneça:</h2>
+
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <br>
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4"><%= f.input :name,autofocus: true,:label => "Nome",:style=>"width:50%;" %></div>
+              <div class="col-md-4"></div>
+            </div>
+            <br>
+           <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4"><%= f.label :is_female, "Sexo" %> </div>
+              <div class="col-md-4"></div>
+            </div>
+
+           <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4"><%= f.radio_button :is_female, '1' %> <%= f.label :is_female, "Feminino" %>
+                                    <%= f.radio_button :is_female, '0' %> <%= f.label :is_female, "Masculino" %></div>
+              <div class="col-md-4"></div>
+            </div>
+            <br>
+           <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4"><%= f.label :date_of_birth, "Data de Nascimento" %> </div>
+              <div class="col-md-4"></div>
+            </div>
+           <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4"> <%= f.date_select :date_of_birth %></div>
+              <div class="col-md-4"></div>
+            </div>
+            <br>
+           <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4"> <%= f.label :email, "Email" %></div>
+              <div class="col-md-4"></div>
+            </div>
+           <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4"><%= f.email_field :email %></div>
+              <div class="col-md-4"></div>
+            </div>
+
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <p>Currently waiting confirmation for: <%= resource.unconfirmed_name %></p>
+            <% end %>
+
+            <br>
+           <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4"><%= f.label :password, :label => "Senha"%> <i>(deixe em branco se você não quiser alterá-la)</div>
+              <div class="col-md-4"></div>
+            </div>
+           <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4"><%= f.password_field :password, autocomplete: "off", :style=>"width:50%;" %></div>
+              <div class="col-md-4"></div>
+            </div>
+
+            <br>
+           <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4"><%= f.label :password_confirmation, :label => "Senha Confirmação" %></div>
+              <div class="col-md-4"></div>
+            </div>
+           <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4"><%= f.password_field :password_confirmation, autocomplete: "off" , :style=>"width:50%;" %></div>
+              <div class="col-md-4"></div>
+            </div>
+
+            <br>
+           <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4"><%= f.label :current_password, :label => "Senha Atual" %> <i>(nós precisamos de sua senha atual para confirmar as alterações)</i></div>
+              <div class="col-md-4"></div>
+            </div>
+           <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4"><%= f.password_field :current_password, autocomplete: "off", :style=>"width:50%;"  %></div>
+              <div class="col-md-4"></div>
+            </div>
+            <br>
+            <div class="form-actions">
+              <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"><%= f.button :submit, "Editar",:class => 'btn-primary'%></div>
+                <div class="col-md-4"></div>
+              </div>
+            </div>
+
+          </div> 
+
+        <% end %>
+
+</div>
+

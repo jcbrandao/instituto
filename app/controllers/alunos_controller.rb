@@ -1,5 +1,6 @@
 class AlunosController < ApplicationController
   before_action :set_aluno, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /alunos
   # GET /alunos.json
@@ -14,7 +15,12 @@ class AlunosController < ApplicationController
 
   # GET /alunos/new
   def new
-    @aluno = Aluno.new
+    if current.user.present?
+      @aluno = Aluno.new
+    else
+      redirect_to root_path
+    end
+  
   end
 
   # GET /alunos/1/edit
@@ -24,17 +30,23 @@ class AlunosController < ApplicationController
   # POST /alunos
   # POST /alunos.json
   def create
-    @aluno = Aluno.new(aluno_params)
+    if current.user.present?
+        @aluno = Aluno.new(aluno_params)
 
-    respond_to do |format|
-      if @aluno.save
-        format.html { redirect_to @aluno, notice: 'Aluno criado com sucesso.' }
-        format.json { render :show, status: :created, location: @aluno }
-      else
-        format.html { render :new }
-        format.json { render json: @aluno.errors, status: :unprocessable_entity }
-      end
+        respond_to do |format|
+          if @aluno.save
+            format.html { redirect_to @aluno, notice: 'Aluno criado com sucesso.' }
+            format.json { render :show, status: :created, location: @aluno }
+          else
+            format.html { render :new }
+            format.json { render json: @aluno.errors, status: :unprocessable_entity }
+          end
+        end
+    
+    else
+      redirect_to root_path
     end
+  
   end
 
   # PATCH/PUT /alunos/1

@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'protected_attributes'
+gem 'devise'
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'

@@ -1,0 +1,72 @@
+<div class="container droppedHover">
+         
+         <h2 class="text-center" contenteditable="false">Por favor, forneça:</h2>
+         <br>	
+
+		<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+		  <%= f.error_notification %>
+
+	        <div class="form-inputs">
+
+             	<div class="row">
+				  <div class="col-md-4"></div>
+				  <div class="col-md-4"><%= f.input :name, :label => "Nome",required: false, autofocus: true,:style=>"width:50%;"%></div>
+				  <div class="col-md-4"></div>
+				</div>
+
+	           <div class="row">
+	              <div class="col-md-4"></div>
+	              <div class="col-md-4"><%= f.label :is_female, "Sexo" %> </div>
+	              <div class="col-md-4"></div>
+	            </div>
+
+	           <div class="row">
+	              <div class="col-md-4"></div>
+	              <div class="col-md-4"><%= f.radio_button :is_female, '1' %> <%= f.label :is_female, "Feminino" %>
+	                                    <%= f.radio_button :is_female, '0' %> <%= f.label :is_female, "Masculino" %></div>
+	              <div class="col-md-4"></div>
+	            </div>
+	            <br>
+	           <div class="row">
+	              <div class="col-md-4"></div>
+	              <div class="col-md-4"><%= f.label :date_of_birth, "Data de Nascimento" %> </div>
+	              <div class="col-md-4"></div>
+	            </div>
+	           <div class="row">
+	              <div class="col-md-4"></div>
+	              <div class="col-md-4"> <%= f.date_select :date_of_birth %></div>
+	              <div class="col-md-4"></div>
+	            </div>
+	            <br>
+
+				<div class="row">
+				  <div class="col-md-4"></div>
+				  <div class="col-md-4"><%= f.input :email, :label => "Email",required: false %></div>
+				  <div class="col-md-4"></div>
+				</div>
+
+				<div class="row">
+				  <div class="col-md-4"></div>
+				  <div class="col-md-4"><%= f.input :password,  :label => "Senha",required: false, hint: ("#{@minimum_password_length} caractéres no minimo" if @validatable) %></div>
+				  <div class="col-md-4"></div>
+				</div>
+
+				<div class="row">
+				  <div class="col-md-4"></div>
+				  <div class="col-md-4"><%= f.input :password_confirmation,  :label => "Senha Confirmação",required: false %></div>
+				  <div class="col-md-4"></div>
+				</div>
+		    
+				<div class="form-actions">
+				  <div class="col-md-4"></div>
+				  <div class="col-md-4"><%= f.button :submit, "Registrar-se", :class => 'btn-primary' %>
+				  					<br><%= render "users/shared/links" %>
+				  </div>
+				  <div class="col-md-4"></div>
+				</div>
+
+		  
+		  </div>
+		<% end -%>
+
+</div>

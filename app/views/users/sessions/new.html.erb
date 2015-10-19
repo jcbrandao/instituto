@@ -1,0 +1,53 @@
+<div class="container droppedHover">
+         
+         <h2 class="text-center" contenteditable="false">Por favor, forneça:</h2>
+
+		<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+		  <%= devise_error_messages! %>
+
+		  <div class="form-inputs">
+
+				<div class="row">
+				  <div class="col-md-4"></div>
+				  <div class="col-md-4"><%= f.input :name, required:false, autofocus: true,:label => "Nome" %></div>
+				  <div class="col-md-4"></div>
+				</div>
+
+
+				<div class="row">
+				  <div class="col-md-4"></div>
+				  <div class="col-md-4"><%= f.input :password,required: false,:label => "Senha" %></div>
+				  <div class="col-md-4"></div>
+				</div>
+
+				<div class="row">
+				  <div class="col-md-4"></div>
+				  <div class="col-md-4"><%= f.input :remember_me,:label => "Lembre-me",  as: :boolean if devise_mapping.rememberable? %></div>
+				  <div class="col-md-4"></div>
+				</div>
+
+				<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    				<div>Currently waiting confirmation for: <%= resource.unconfirmed_name %></div>
+    			<% end %>
+
+				  <div class="form-actions">
+					<div class="row">
+					  <div class="col-md-4"></div>
+					  <div class="col-md-4"><%= f.button :submit, "Logar-se", :class => 'btn-primary' %></div>
+					  <div class="col-md-4"></div>
+					</div>
+				  </div>
+
+		  </div>
+
+		<% end %>
+
+</div>
+<br>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4"><%= render "users/shared/links" %></div>
+  <div class="col-md-4"></div>
+<br><br>
+</div>
+

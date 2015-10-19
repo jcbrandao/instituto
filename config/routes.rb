@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  
-  get 'home/index'
-  
+ 
+  devise_for :users, :path_names => { :sign_up => "register" }
+ 
+  resources :pdialunos
 
   resources :primeiro_alunos
 
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :alunos
 
+  get 'home/index'
   root :to=> "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
